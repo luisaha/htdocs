@@ -9,6 +9,7 @@
         <title>Ticketverkauf</title>
     </header>
     <?
+        require_once('CustomerService.php');
         require_once('Customer.php');
         require_once('Event.php');
         require_once('Organizer.php');

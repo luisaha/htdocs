@@ -1,24 +1,12 @@
 <?php
 
-include_once ('includes/config.php');
-include_once ('DB.php');
+    include_once ('includes/config.inc.php');
+    include_once ('Customer.php');
+    include_once ('DB.php');
 
-    class Customer
-    {
-        private string $customerName;
-        private string $customerAddress;
+    class CustomerService {
 
-        public function getCustomerName()
-        {
-            return $this->customerName;
-        }
-
-        public function getCustomerAddress()
-        {
-            return $this->customerAddress;
-        }
-
-        static function loadCustomers()
+        public static function loadCustomers()
         {
             $db = new DB();
             $abc = 'SELECT * FROM customer';
@@ -28,9 +16,7 @@ include_once ('DB.php');
             return $result;
         }
 
-
-
-        static function createCustomer()
+        public static function createCustomer()
         {
 
             $customer = $_POST['customerName'];
@@ -44,7 +30,6 @@ include_once ('DB.php');
             //header('Location: ../index.php?signup=success');
         }
 
+        }
     }
-
-
 ?>
