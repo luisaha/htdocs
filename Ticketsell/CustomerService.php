@@ -72,8 +72,8 @@
         public static function updateCustomer()
         {
             $id = $_POST['id'];
-            $customer = $_POST['name'];
-            $address = $_POST['address'];
+            $customer = $_POST['customerName'];
+            $address = $_POST['customerAddress'];
             $db = DB::getInstance();
             $sql = "UPDATE customer SET name='$customer', address='$address' WHERE id=$id";
             $result = $db->query($sql);

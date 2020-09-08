@@ -108,12 +108,12 @@
                             ?>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" method="post"
+                            <input type="text" class="form-control" name="customerName" method="post"
                                    value="<? echo $update==true ? $customer->getCustomerName() : '' ?>" placeholder="Name">
 
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="address" method="post"
+                            <input type="text" class="form-control" name="customerAddress" method="post"
                                    value="<? echo $update==true ? $customer->getCustomerAddress() : '' ?>" placeholder="Adresse">
                         </div>
                         <?
