@@ -4,10 +4,13 @@
 
     class DB {
 
-        public $db;
+        private $db;
+        private static $instance = null;
 
-        function __construct()
+
+        private function __construct()
         {
+
             $this->db = mysqli_connect (MYSQL_host, MYSQL_user, MYSQL_password, MYSQL_database);
 
             mysqli_set_charset($this->db, 'utf8');
@@ -19,7 +22,17 @@
 
         }
 
-        function query($sql)
+        public static function getInstance()
+        {
+            if (static::$instance == null)
+            {
+                static::$instance = new static();
+            }
+            return static::$instance;
+        }
+
+
+        public function selectQuery($sql)
         {
             $array = array();
 
@@ -29,6 +42,21 @@
                 $array[] = $row;
             }
             return $array;
+        }
+
+        public function query($sql)
+        {
+            if (mysqli_query($this->db, $sql)) {
+                return true;
+            }
+            $this->getErrorMessage();
+
+            return false;
+        }
+
+        private function getErrorMessage()
+        {
+            echo mysqli_error($this->db);
         }
     }
 
