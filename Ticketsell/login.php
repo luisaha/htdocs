@@ -61,6 +61,9 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 <body class="pt-5">
     <div class="container">
         <div class="row">
+            <?php include ('message.php'); ?>
+        </div>
+        <div class="row">
             <div class="col-md-10">
                 <h3><a href="seite2.php">Seite 2</a></h3>
             </div>
@@ -71,9 +74,7 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 
         </div>
     </div>
-    <div class="row">
-        <?php include ('message.php'); ?>
-    </div>
+
 
 <div class="container bg-light p-5">
 

@@ -6,7 +6,6 @@ if (isset($_SESSION['lastAccess']) && $_SESSION['lastAccess'] >= time()-3600)
 }
 require_once ('DB.php');
 require_once ('User.php');
-require_once ('UserService.php');
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +25,41 @@ require_once ('UserService.php');
     <body class="pt-5">
         <div class="container p-5">
             <div class="row">
-                <div class="col-md-4">
+               <? if (isset($_GET['signup']) && $_GET['signup']=='success') {
+
+                   echo '<div class="row alert alert-success" role="alert">
+                    Du hast dich erfolgreich registriert. Logge Dich jetzt ein!
+                </div>';
+               }
+               ?>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
 
                 </div>
-                <div class="col-md-4 bg-light p-3 rounded">
+                <div class="col-md-6 bg-light m-3 p-5 rounded">
                     <form action="login.php" method="post">
                         <h1 class="text-center">Login</h1>
                         <br/>
-                        <input class="m-2 form-control" type="text" name="userName" placeholder="Name"/><br>
-                        <input class="m-2 form-control" type="password" name="password" placeholder="Passwort"/><br>
-                        <button type="button" class="btn btn-primary align-content-center" type="submit">Anmelden</button>
-                    </form>
+                        <input class="form-control" type="text" name="userName" placeholder="Benutzername"/><br>
+                        <input class="form-control" type="password" name="password" placeholder="Passwort"/><br>
+                        <button type="submit" class="btn btn-primary align-content-center rounded-pill" type="submit">Anmelden</button>
+                    </form><br>
+                    Hast Du dein <a href="forgotPassword.php">Passwort vergessen?</a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-6">
+                    <span class="ml-2">Noch keinen Account? Dann registriere Dich <a href="register.php"> hier!</a></span>
+                </div>
+                <div class="col-md-3">
 
                 </div>
 

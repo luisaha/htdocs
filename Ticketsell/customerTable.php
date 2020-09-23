@@ -28,11 +28,11 @@
                                     <a href="index.php?edit=
                                     ';
                                  echo $customer->getCustomerId();
-                                 echo'" class="btn btn-info fa fa-folder"></a>
+                                 echo'" class="btn btn-info fa fa-folder rounded-pill"></a>
                                     <a href="index.php?delete=
                                     ';
                                  echo $customer->getCustomerId();
-                                 echo '" class="btn btn-danger fa fa-trash"></a>
+                                 echo '" class="btn btn-danger fa fa-trash rounded-pill"></a>
                                 </td>
                             </tr>';
                         }

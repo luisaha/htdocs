@@ -32,9 +32,9 @@
          ';
 
     if ($update == true) {
-        echo '<button type = "submit" class="btn btn-info" name = "update" > Änderungen speichern </button >';
+        echo '<button type = "submit" class="btn btn-info rounded-pill" name = "update" > Änderungen speichern </button >';
     } else {
-        echo '<button type = "submit" class="btn btn-primary" > Registrieren</button >';
+        echo '<button type = "submit" class="btn btn-primary rounded-pill" > Registrieren</button >';
     }
     echo '</form> <br>';
 

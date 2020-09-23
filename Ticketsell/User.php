@@ -1,6 +1,6 @@
 <?php
 
-include_once('UserService.php');
+include_once ('DB.php');
 
 class User
 
@@ -34,6 +34,31 @@ class User
 
     public function getUserPassword() {
         return $this->userPassword;
+    }
+
+    public static function createUser() {
+        $mail = $_POST['userMail'];
+        $username = $_POST['userName'];
+        $password = $_POST['password'];
+        $db = DB::getInstance();
+        $sql = "INSERT INTO user (username, mail, password) VALUES ('$username','$mail' , '$password');";
+        $result = $db->query($sql);
+        if ($result)
+        {
+            header('Location: index.php?signup=success');
+        }
+    }
+
+    public static function loginUser() {
+        $customer = $_POST['userName'];
+        $address = $_POST['password'];
+        $db = DB::getInstance();
+        $sql = "SELECT username, password FROM user WHERE userName =? && password =?";
+        $result = $db->query($sql);
+        if ($result)
+        {
+            header('Location: index.php?signup=success');
+        }
     }
 
 }
