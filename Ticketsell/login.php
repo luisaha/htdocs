@@ -59,9 +59,11 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 ?>
 
 <body class="pt-5">
+
     <div class="container">
         <div class="row">
             <?php include ('message.php'); ?>
+            <? echo 'Hallo '. $name; ?>
         </div>
         <div class="row">
             <div class="col-md-10">

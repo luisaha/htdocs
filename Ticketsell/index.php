@@ -6,6 +6,8 @@ if (isset($_SESSION['lastAccess']) && $_SESSION['lastAccess'] >= time()-3600)
 }
 require_once ('DB.php');
 require_once ('User.php');
+require_once('Transfer.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +45,7 @@ require_once ('User.php');
                         <br/>
                         <input class="form-control" type="text" name="userName" placeholder="Benutzername"/><br>
                         <input class="form-control" type="password" name="password" placeholder="Passwort"/><br>
-                        <button type="submit" class="btn btn-primary align-content-center rounded-pill" type="submit">Anmelden</button>
+                        <button type="submit" class="btn btn-primary align-content-center rounded-pill" name="login" type="submit">Anmelden</button>
                     </form><br>
                     Hast Du dein <a href="forgotPassword.php">Passwort vergessen?</a>
                 </div>

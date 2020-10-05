@@ -31,6 +31,12 @@
             return static::$instance;
         }
 
+        public function countQuery($sql)
+        {
+            $result = mysqli_query($this->db, $sql);
+            $i = mysqli_num_rows($result);
+            return $i;
+        }
 
         public function selectQuery($sql)
         {

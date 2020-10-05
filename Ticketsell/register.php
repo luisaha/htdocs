@@ -1,7 +1,6 @@
 <?php
 
 session_start(); //Nicht vergessen
-$name = $_POST['userName'];
 
 if (!isset($name) or empty($name)) {
     $name = "Gast";
@@ -10,7 +9,7 @@ if (!isset($name) or empty($name)) {
 $_SESSION['userName'] = $name;
 
 ?>
-
+    ^
 
 <!DOCTYPE html>
 
@@ -24,15 +23,31 @@ $_SESSION['userName'] = $name;
     <title>Registrierung</title>
 
     <?
-        require_once('Customer.php');
+        require_once('User.php');
         require_once('Transfer.php');
     ?>
 </header>
 <body class="pt-5">
 <div class="container p-5">
     <div class="row">
+        <div class="col-md-5">
+            <? if (isset($_GET['register']) && $_GET['register']=='empty')
+            {
+                echo '<div class="row alert alert-danger" role="alert">
+                    Angaben unvollständig!
+                </div>';
+            }
+            elseif (isset($_GET['register']) && $_GET['register']=='taken')
+            {
+                echo '<div class="row alert alert-danger" role="alert">
+                    Es existiert bereits ein Nutzer mit dieser E-Mailadresse!
+                    </div>';
+            }
+            ?>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-3">
-
         </div>
         <div class="col-md-6 bg-light m-3 p-5 rounded">
             <form action="createUser.php" method="post">
