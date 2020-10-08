@@ -1,5 +1,10 @@
 <?php
-    require_once('User.php');
+    require_once ('User.php');
 
-    User::loginUser();
-
+    if (empty($_POST['userName']) OR empty($_POST['password']))
+    {
+        header('Location: index.php?login=empty');
+    }
+    else {
+        User::loginUser();
+    }

@@ -33,6 +33,12 @@ require_once('Transfer.php');
                     Du hast dich erfolgreich registriert. Logge Dich jetzt ein!
                 </div>';
                }
+               if (isset($_GET['login']) && $_GET['login'] == 'failed') {
+
+                   echo '<div class="row alert alert-danger" role="alert">
+                    Der Benutzername und/oder das Passwort sind/ist falsch!
+                </div>';
+               }
                ?>
             </div>
             <div class="row">
@@ -40,7 +46,7 @@ require_once('Transfer.php');
 
                 </div>
                 <div class="col-md-6 bg-light m-3 p-5 rounded">
-                    <form action="login.php" method="post">
+                    <form action="loginUser.php" method="post">
                         <h1 class="text-center">Login</h1>
                         <br/>
                         <input class="form-control" type="text" name="userName" placeholder="Benutzername"/><br>
