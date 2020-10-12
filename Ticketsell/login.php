@@ -1,13 +1,5 @@
 <?php
-
     session_start(); //Nicht vergessen
-    $name = $_POST['userName'];
-
-    if (!isset($name) or empty($name)) {
-        $name = "Gast";
-    }
-    //Session registrieren
-    $_SESSION['userName'] = $name;
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +54,9 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 
     <div class="container">
         <div class="row">
-            <?php include ('message.php'); ?>
-            <? echo 'Hallo '. $name; ?>
+            <div class="col-md-11">
+
+            </div>
         </div>
         <div class="row">
             <div class="col-md-10">
@@ -71,7 +64,7 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
             </div>
             <br>
             <div class="col-md-2">
-                <h3><a href="logout.php">Logout</a></h3>
+                <h3><a href="index.php" class="btn box-arrow-in-left">Logout</a></h3>
             </div>
 
         </div>

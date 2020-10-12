@@ -49,7 +49,7 @@ require_once('Transfer.php');
                     <form action="loginUser.php" method="post">
                         <h1 class="text-center">Login</h1>
                         <br/>
-                        <input class="form-control" type="text" name="userName" placeholder="Benutzername"/><br>
+                        <input class="form-control" type="text" name="username" placeholder="Benutzername"/><br>
                         <input class="form-control" type="password" name="password" placeholder="Passwort"/><br>
                         <button type="submit" class="btn btn-primary align-content-center rounded-pill" name="login" type="submit">Anmelden</button>
                     </form><br>
@@ -64,8 +64,10 @@ require_once('Transfer.php');
                 <div class="col-md-3">
 
                 </div>
-                <div class="col-md-6">
-                    <span class="ml-2">Noch keinen Account? Dann registriere Dich <a href="register.php"> hier!</a></span>
+                <div class="col-sm-6">
+                    <span class="small">
+                        Noch keinen Account? Dann registriere Dich <a href="register.php"> hier!</a>
+                    </span>
                 </div>
                 <div class="col-md-3">
 

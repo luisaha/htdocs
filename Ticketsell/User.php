@@ -69,14 +69,15 @@ class User
     }
 
     public static function loginUser() {
-        $username = $_POST['userName'];
+        $username = $_POST['username'];
         $password = $_POST['password'];
         $password = md5($password);
         $db = DB::getInstance();
         $sql = "SELECT username, password FROM user WHERE username = '$username' and password = '$password'";
         $i = $db->countQuery($sql);
-        if ($i > 0)
+        if ($i >0)
         {
+            $_SESSION['username'] = $username;
             header('Location: login.php');
         }
         else

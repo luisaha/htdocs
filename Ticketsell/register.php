@@ -9,7 +9,7 @@ if (!isset($name) or empty($name)) {
 $_SESSION['userName'] = $name;
 
 ?>
-    ^
+
 
 <!DOCTYPE html>
 
