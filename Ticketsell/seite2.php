@@ -2,12 +2,12 @@
 
     session_start(); //Ganz wichtig
 
-    if (!isset($_SESSION['userName'])) {
+    if (!isset($_SESSION['username'])) {
         die("Bitte erst einloggen"); //Mit die beenden wir den weiteren Scriptablauf
     }
 
     //In $name den Wert der Session speichern
-    $name = $_SESSION['userName'];
+    $name = $_SESSION['username'];
 
     //Text ausgeben
     echo "Du heißt immer noch: $name

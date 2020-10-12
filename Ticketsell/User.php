@@ -37,7 +37,6 @@ class User
     }
 
     public static function takenUser() {
-        $mail = $_POST['userMail'];
         $username = $_POST['userName'];
         $password = $_POST['password'];
         $password = md5($password);
@@ -77,6 +76,7 @@ class User
         $i = $db->countQuery($sql);
         if ($i >0)
         {
+            session_start();
             $_SESSION['username'] = $username;
             header('Location: login.php');
         }
@@ -87,4 +87,3 @@ class User
     }
 
 }
-?>

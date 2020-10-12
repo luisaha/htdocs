@@ -1,5 +1,5 @@
 <?php
-    session_start(); //Nicht vergessen
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ require_once('Transfer.php');
 require_once('Ticket.php');
 require_once('SeatType.php');
 require_once('EventSeatType.php');
+require_once ('User.php');
 
 if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'createCustomer')
 {
@@ -59,12 +60,18 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <h3><a href="seite2.php">Seite 2</a></h3>
             </div>
             <br>
             <div class="col-md-2">
-                <h3><a href="index.php" class="btn box-arrow-in-left">Logout</a></h3>
+                <? echo $_SESSION['username']; ?>
+            </div>
+            <br>
+            <div class="col-md-2">
+                <h3><a href="logout.php" class="btn box-arrow-in-left">Logout</a></h3>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-left"
+                     xmlns="http://www.w3.org/2000/svg">
             </div>
 
         </div>
