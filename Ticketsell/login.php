@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <title>Ticketverkauf</title>
 </header>
@@ -51,9 +52,16 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 }
 ?>
 
-<body class="pt-5">
 
-    <div class="container">
+<body>
+    <div class="pull-right pr-3">
+        <a href="logout.php" class="btn box-arrow-in-left"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="container pt-5">
         <div class="row">
             <div class="col-md-11">
 
@@ -64,14 +72,13 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
                 <h3><a href="seite2.php">Seite 2</a></h3>
             </div>
             <br>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <? echo $_SESSION['username']; ?>
             </div>
             <br>
-            <div class="col-md-2">
-                <h3><a href="logout.php" class="btn box-arrow-in-left">Logout</a></h3>
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-left"
-                     xmlns="http://www.w3.org/2000/svg">
+            <div class="col-md-1">
+
+
             </div>
 
         </div>
