@@ -10178,6 +10178,10 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.icon:hover {
+  fill: #324cff;
+}
+
 @media print {
   *,
   *::before,
