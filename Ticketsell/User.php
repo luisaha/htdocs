@@ -9,13 +9,19 @@ class User
     private string $userName;
     private string $userMail;
     private string $userPassword;
+    private bool $viewTitle;
+    private bool $viewTable;
+    private bool $viewForm;
 
-    public function __construct(int $userId, String $userName, String $userMail, String $userPassword)
+    public function __construct(int $userId, String $userName, String $userMail, String $userPassword, bool $viewTitle, bool $viewTable, bool $viewForm)
     {
         $this->userId = $userId;
         $this->userName = $userName;
         $this->userMail = $userMail;
         $this->userPassword = $userPassword;
+        $this->viewTitle = $viewTitle;
+        $this->viewTable = $viewTable;
+        $this->viewForm = $viewForm;
     }
 
     public function getUserName()
@@ -58,8 +64,9 @@ class User
         $username = $_POST['userName'];
         $password = $_POST['password'];
         $password = md5($password);
+        $view = '1';
         $db = DB::getInstance();
-        $sql = "INSERT INTO user (username, mail, password) VALUES ('$username', '$mail' , '$password');";
+        $sql = "INSERT INTO user (username, mail, password, viewid) VALUES ('$username', '$mail' , '$password', $view);";
         $result = $db->query($sql);
         if ($result)
         {
@@ -72,12 +79,13 @@ class User
         $password = $_POST['password'];
         $password = md5($password);
         $db = DB::getInstance();
-        $sql = "SELECT username, password FROM user WHERE username = '$username' and password = '$password'";
+        $sql = "SELECT * FROM user, view  WHERE user.viewid = view.id AND user.username = '$username' AND user.password = '$password'";
         $i = $db->countQuery($sql);
         if ($i >0)
         {
             session_start();
             $_SESSION['username'] = $username;
+
             header('Location: login.php');
         }
         else
