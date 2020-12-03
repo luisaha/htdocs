@@ -87,20 +87,15 @@ if (isset($_GET['edit']) && $_GET['edit'] !='success')
 
 
 <div class="container bg-light p-5">
-
+    <?php
+        include ('title.php');
+        ?>
     <div class="row">
-
-        <?php if($_SESSION['viewTitle']) include ('title.php');?>
+        <?php include('customerForm.php');
+        include('customerTable.php');
+        ?>
     </div>
-    <div class="row">
-        <div class="col-md-4 pt-3">
-            <?php include('customerForm.php');?>
-        </div>
-        <br>
-        <div class="col-md-8">
-            <?php include('customerTable.php');?>
-        </div>
-    </div>
+</div>
 
 
 

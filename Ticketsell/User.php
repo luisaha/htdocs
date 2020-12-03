@@ -77,14 +77,23 @@ class User
     public static function loginUser() {
         $username = $_POST['username'];
         $password = $_POST['password'];
+
         $password = md5($password);
         $db = DB::getInstance();
         $sql = "SELECT * FROM user, view  WHERE user.viewid = view.id AND user.username = '$username' AND user.password = '$password'";
         $i = $db->countQuery($sql);
+        $result = $db-query($sql);
+        $viewtitle = $result["title"];
+        $viewform = $result["form"];
+        $viewtable = $result["table"];
+
         if ($i >0)
         {
             session_start();
             $_SESSION['username'] = $username;
+            $_SESSION['viewtitle'] = $viewtitle;
+            $_SESSION['viewform'] = $viewform;
+            $_SESSION['viewtable'] = $viewtable;
 
             header('Location: login.php');
         }

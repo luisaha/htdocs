@@ -1,5 +1,9 @@
 <?php
-    echo '<table class="table table-hover">
+if($_SESSION['viewTable']== '1')
+{
+    echo '
+        <div class="col-md-8">
+        <table class="table table-hover">
                         <thead>
                         <tr>
                             <th scope="col">KNr.</th>
@@ -38,5 +42,9 @@
                         }
                         echo'
                         </tbody>
-                    </table>';
-?>
+                    </table>
+                    </div>';
+}
+else {
+    echo '<div class="col-md-8"></div>';
+}

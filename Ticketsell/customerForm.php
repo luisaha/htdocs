@@ -1,11 +1,13 @@
 <?php
-
+if($_SESSION['viewForm']== '1')
+{
+    echo '<div class="col-md-4 pt-3">';
     if ($update == true) {
         echo '<form action = "?action=updateCustomer" method = "post" >
             <div>
                 <input type = "hidden" name = "id" value = "';
-                echo $customer->getCustomerId();
-                echo '" >
+        echo $customer->getCustomerId();
+        echo '" >
             </div>
             ';
     }
@@ -36,6 +38,15 @@
     } else {
         echo '<button type = "submit" class="btn btn-primary rounded-pill" > Registrieren</button >';
     }
-    echo '</form> <br>';
-
+    echo '</form> <br>
+</div>
+';
+}
+else{
+    echo '
+    <div class="col-md-4 pt-3">
+    
+    </div>
+    ';
+}
 ?>
