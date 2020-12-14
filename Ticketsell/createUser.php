@@ -10,7 +10,4 @@
     else {
         User::takenUser();
     }
-
-
-
 ?>
